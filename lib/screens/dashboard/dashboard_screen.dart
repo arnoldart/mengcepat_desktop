@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mengcepat_desktop/styles/theme.dart';
+import 'package:mengcepat_desktop/screens/dashboard/components/Header.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({ Key? key }) : super(key: key);
@@ -8,34 +8,27 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            Container(
-              padding: EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(10))
-              ),
+            Header(),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 16, 0, 0),
               child: Row(
                 children: [
-                  Text("Dashboard", style: Theme.of(context).textTheme.headline6,),
-                  Spacer(),
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        fillColor: Colors.white,
-                        filled: true,
-                        border: OutlineInputBorder(borderSide:  BorderSide.none, borderRadius: const BorderRadius.all(Radius.circular(10)))
-                      ),
-                    )
+                  ElevatedButton.icon(
+                    onPressed: () {}, 
+                    style: TextButton.styleFrom(padding: const EdgeInsets.all(16)),
+                    icon: Icon(Icons.add), 
+                    label: Text('Add Data')
                   )
                 ],
               ),
-            ),
+            )
           ],
         )
       ),
     );
   }
 }
+
